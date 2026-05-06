@@ -7,7 +7,6 @@ import { Header } from './components/Layout/Header';
 import { Dashboard } from './components/Dashboard/Dashboard';
 import { TransactionList } from './components/Transactions/TransactionList';
 import { Reports } from './components/Reports/Reports';
-import { Chatbot } from './components/Chatbot/Chatbot';
 import { Settings as SettingsComponent } from './components/Settings/Settings';
 
 const AppContent = () => {
@@ -36,7 +35,6 @@ const AppContent = () => {
       case 'dashboard': return <Dashboard onNavigate={setActiveTab} />;
       case 'transactions': return <TransactionList />;
       case 'reports': return <Reports />;
-      case 'chatbot': return <Chatbot />;
       case 'settings': return <SettingsComponent />;
       default: return <Dashboard onNavigate={setActiveTab} />;
     }

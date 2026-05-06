@@ -3,7 +3,6 @@ import {
   Home,
   CreditCard,
   BarChart3,
-  MessageCircle,
   Settings,
   Store,
 } from "lucide-react";
@@ -13,7 +12,6 @@ export const Sidebar = ({ activeTab, setActiveTab }) => {
     { id: "dashboard", icon: Home, label: "Dashboard" },
     { id: "transactions", icon: CreditCard, label: "Transactions" },
     { id: "reports", icon: BarChart3, label: "Reports" },
-    { id: "chatbot", icon: MessageCircle, label: "AI Chat" },
     { id: "settings", icon: Settings, label: "Settings" },
   ];
 
