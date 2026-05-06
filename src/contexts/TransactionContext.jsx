@@ -9,6 +9,24 @@ export const TransactionProvider = ({ children }) => {
     });
 
     useEffect(() => {
+        const handleStorageChange = () => {
+            const stored = localStorage.getItem('bazaranet_transactions');
+            if (stored) {
+                setTransactions(JSON.parse(stored));
+            }
+        };
+        
+        window.addEventListener('storage', handleStorageChange);
+        
+        const stored = localStorage.getItem('bazaranet_transactions');
+        if (stored) {
+            setTransactions(JSON.parse(stored));
+        }
+        
+        return () => window.removeEventListener('storage', handleStorageChange);
+    }, []);
+
+    useEffect(() => {
         localStorage.setItem('bazaranet_transactions', JSON.stringify(transactions));
     }, [transactions]);
 

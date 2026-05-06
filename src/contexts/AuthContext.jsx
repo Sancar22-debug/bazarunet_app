@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { mockTransactions } from '../data/mockData';
 
 const AuthContext = createContext(undefined);
 
@@ -40,6 +41,8 @@ export const AuthProvider = ({ children }) => {
                 setUser(demoUser);
                 setIsAuthenticated(true);
                 localStorage.setItem('bazaranet_auth', JSON.stringify({ user: demoUser }));
+                localStorage.setItem('bazaranet_transactions', JSON.stringify(mockTransactions));
+                window.location.reload();
                 resolve();
             }, 500);
         });
